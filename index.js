@@ -1,5 +1,11 @@
 // Typing Animation
-const phrases = ["AI Developer specializing in Computer Vision & Robotics", "Building Intelligent Systems", "Passionate about Deep Learning"];
+const phrases = [
+    "AI R&D Engineer",
+    "Computer Vision Specialist",
+    "LLM & Prompt Engineering Expert",
+    "Building Intelligent Systems",
+    "Passionate about Deep Learning"
+];
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
