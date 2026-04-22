@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oussama Fezzai | AI Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Oussama Fezzai, AI Engineer specializing in Computer Vision and Machine Learning. Based in Toulouse, France.">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <style>
+        /* Specific page styling */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 40%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(124, 77, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 50%, transparent 100%);
+            filter: blur(80px);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-left: auto;
+            border: 2px solid var(--glass-border);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .experience-grid, .education-grid {
+            display: grid;
+            gap: var(--spacing-md);
+        }
+
+        .skill-tag {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: inline-block;
+            margin: 0 8px 8px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            margin-top: var(--spacing-md);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .profile-img-container {
+                margin: 0 auto;
+                width: 250px;
+                height: 250px;
+            }
+            h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" style="font-weight: 700; color: white; text-decoration: none; font-size: 1.2rem;">OF</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <p style="color: var(--accent-secondary); font-weight: 600; margin-bottom: 1rem;">Hello, I'm</p>
+                        <h1>Oussama Fezzai</h1>
+                        <p style="font-size: 1.5rem; color: var(--text-primary); margin: 1rem 0;">
+                            <span class="typing-text"></span>
+                        </p>
+                        <div class="social-links" style="display: flex; gap: 1rem; margin: 1.5rem 0;">
+                            <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                            <a href="https://www.linkedin.com/in/oussama-fezzai-72090621a/" target="_blank" class="social-icon" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                        </div>
+                        <div style="display: flex; gap: var(--spacing-sm);">
+                            <a href="#contact" class="btn btn-primary">Hire Me</a>
+                            <a href="assets/CV_Oussama_Fezzai.pdf" target="_blank" class="btn btn-secondary">Download CV</a>
+                        </div>
+                    </div>
+                    <div class="profile-img-container">
+                        <img src="assets/oussama.png" alt="Oussama Fezzai">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="reveal">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="glass-card" style="margin-top: var(--spacing-md);">
+                    <p>
+                        I am an AI Engineer with a strong background in Computer Vision and Mechatronics. 
+                        My expertise lies in developing intelligent systems, from deep learning models for image analysis 
+                        to robotic perception. I hold a Master's degree from Université Paris-Saclay and am passionate 
+                        about pushing the boundaries of what's possible with artificial intelligence.
+                    </p>
+                    <div style="margin-top: var(--spacing-md);">
+                        <div class="skill-tag">Deep Learning</div>
+                        <div class="skill-tag">Computer Vision</div>
+                        <div class="skill-tag">PyTorch</div>
+                        <div class="skill-tag">TensorFlow</div>
+                        <div class="skill-tag">OpenCV</div>
+                        <div class="skill-tag">ROS</div>
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">C++</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="reveal">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="experience-grid">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div>
+                                <h3 style="color: var(--accent-secondary);">AI Engineer</h3>
+                                <p style="color: white; font-weight: 500;">CELAD</p>
+                            </div>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">2024 - Present</span>
+                        </div>
+                        <p>Working on advanced AI solutions and computer vision projects.</p>
+                    </div>
+
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div>
+                                <h3 style="color: var(--accent-secondary);">Intern - AI & Vision</h3>
+                                <p style="color: white; font-weight: 500;">ENST</p>
+                            </div>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">2023</span>
+                        </div>
+                        <p>Developed research projects focusing on autonomous navigation and object detection.</p>
+                    </div>
+
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div>
+                                <h3 style="color: var(--accent-secondary);">Intern</h3>
+                                <p style="color: white; font-weight: 500;">Sonatrach</p>
+                            </div>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">2022</span>
+                        </div>
+                        <p>Applied technical skills in an industrial environment, focusing on system optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="reveal">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="education-grid">
+                    <div class="glass-card">
+                        <h3 style="color: var(--accent-secondary);">Master 2 - Mechatronics, Vision and AI</h3>
+                        <p style="color: white;">Université Paris-Saclay</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Paris, France</p>
+                    </div>
+                    <div class="glass-card">
+                        <h3 style="color: var(--accent-secondary);">Engineering Degree</h3>
+                        <p style="color: white;">Ecole Nationale Supérieure de Technologie (ENST)</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Algiers, Algeria</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="reveal">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="glass-card">
+                    <p>Interested in working together? Let's connect!</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <a href="mailto:oussamafezzai06@gmail.com" style="color: var(--text-secondary); text-decoration: none;">oussamafezzai06@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <span>07 45 40 00 96</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📍</span>
+                            <span>Toulouse, France</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>🔗</span>
+                            <a href="https://www.linkedin.com/in/oussama-fezzai-72090621a/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: var(--spacing-md) 0; border-top: 1px solid var(--glass-border); text-align: center;">
+        <div class="container">
+            <p style="font-size: 0.9rem;">&copy; 2024 Oussama Fezzai. Built with Passion.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
