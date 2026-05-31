@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oussama Fezzai | AI Engineer Portfolio</title>
+    <meta name="author" content="Oussama Fezzai">
     <meta name="description"
-        content="Portfolio of Oussama Fezzai, AI Engineer specializing in Computer Vision and Machine Learning. Based in Toulouse, France.">
+        content="Portfolio of Oussama Fezzai, AI R&D Engineer specializing in Computer Vision, Machine Learning and LLMs. Based in Toulouse, France.">
+    <meta name="keywords"
+        content="Oussama Fezzai, AI Engineer, Computer Vision, Machine Learning, Deep Learning, LLM, Prompt Engineering, PyTorch, Toulouse, France">
+    <meta name="theme-color" content="#0a0a0c">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oussama Fezzai | AI Engineer Portfolio">
+    <meta property="og:description"
+        content="AI R&D Engineer specializing in Computer Vision, Machine Learning and LLMs. Based in Toulouse, France.">
+    <meta property="og:image" content="assets/oussama.png">
+    <link rel="icon" type="image/png" href="assets/oussama.png">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
     <style>
         /* Specific page styling */
         .hero {
@@ -115,8 +125,11 @@
 <body>
     <nav>
         <div class="container">
-            <a href="#" style="font-weight: 700; color: white; text-decoration: none; font-size: 1.2rem;">OF</a>
-            <ul class="nav-links">
+            <a href="#" class="nav-logo" aria-label="Home">OF</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -193,6 +206,14 @@
                             Toulouse, France, where I evaluate large language models and develop AI solutions for
                             real-world applications.
                         </p>
+                        <div style="margin-top: var(--spacing-sm);">
+                            <strong style="color: var(--accent-secondary);">Languages:</strong>
+                            <ul class="languages-list">
+                                <li><strong>French</strong> — Fluent</li>
+                                <li><strong>English</strong> — Advanced</li>
+                                <li><strong>Arabic</strong> — Native</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="glass-card stats-card">
                         <div class="stat-item">
@@ -305,7 +326,7 @@
                                 <li>Designed and trained deep neural network (DNN) models for defect detection</li>
                                 <li>Implemented Transfer Learning using InceptionV3, ResNet18, and ResNet50 for improved
                                     accuracy</li>
-                                <li>Deployeds on Jetson Nano GPU and NVIDIA RTX 3060 for real-time performance</li>
+                                <li>Deployed on Jetson Nano GPU and NVIDIA RTX 3060 for real-time performance</li>
                                 <li>Integrated with PLC via Ethernet for on-site control and TCP/IP with Node-RED for
                                     remote monitoring</li>
                             </ul>
@@ -472,33 +493,324 @@
         <!-- Projects Section -->
         <section id="projects" class="reveal">
             <div class="container">
-                <h2>Key Projects</h2>
+                <h2>Projects</h2>
+                <p class="section-intro">A selection of my work across computer vision, NLP, generative models and
+                    classical machine learning — from applied research to from-scratch implementations. Most of these are
+                    open-source on my GitHub.</p>
+
+                <h3 class="subsection-title">Featured Projects</h3>
                 <div class="projects-grid">
-                    <div class="glass-card">
-                        <h3 style="color: var(--accent-secondary);">Fine-tuning Llama 3-8B</h3>
-                        <p style="margin-top: 10px;">Adapted Llama 3-8B using QLoRA for autonomous SQL query generation
-                            from natural language instructions. Evaluated for syntactic accuracy and efficiency.</p>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Fine-tuning Llama 3-8B</h3>
+                        </div>
+                        <p>Adapted Llama 3-8B with QLoRA for autonomous SQL query generation from natural-language
+                            instructions, evaluating syntactic accuracy and efficiency.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">LLM</span>
+                            <span class="tech-tag">QLoRA</span>
+                            <span class="tech-tag">Hugging Face</span>
+                            <span class="tech-tag">PyTorch</span>
+                        </div>
                     </div>
-                    <div class="glass-card">
-                        <h3 style="color: var(--accent-secondary);">Breast Cancer Detection</h3>
-                        <p style="margin-top: 10px;">Fine-tuned and evaluated deep learning models for mammography
-                            classification. Implemented complete pipeline from dataset prep to deployment.</p>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Breast Cancer Detection</h3>
+                        </div>
+                        <p>Fine-tuned and evaluated deep-learning models for mammography classification, implementing the
+                            full pipeline from dataset preparation to deployment.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Medical Imaging</span>
+                        </div>
                     </div>
-                    <div class="glass-card">
-                        <h3 style="color: var(--accent-secondary);">GAN-based Data Augmentation</h3>
-                        <p style="margin-top: 10px;">Trained GANs to synthesize realistic images, improving
-                            classification robustness by +5% through cross-validation on balanced datasets.</p>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>GAN-based Data Augmentation</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/DCGAN-for-data-augmentation"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Trained DCGANs to synthesize realistic images and balance datasets, improving classification
+                            robustness by +5% via cross-validation.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">GAN</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Data Augmentation</span>
+                        </div>
                     </div>
-                    <div class="glass-card">
-                        <h3 style="color: var(--accent-secondary);">3D Object Recognition</h3>
-                        <p style="margin-top: 10px;">Multi-view 3D recognition from 2D images. Used CNNs for feature
-                            extraction and K-means for classification and mesh reconstruction.</p>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>3D Object Recognition</h3>
+                        </div>
+                        <p>Multi-view 3D object recognition from 2D images, using CNNs for feature extraction, K-means for
+                            classification and mesh reconstruction.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">K-means</span>
+                        </div>
                     </div>
-                    <div class="glass-card">
-                        <h3 style="color: var(--accent-secondary);">Edge AI Optimization</h3>
-                        <p style="margin-top: 10px;">AutoML design of CNN architectures for memory-constrained edge
-                            devices. Used Reinforcement Learning for topology search.</p>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Edge AI Optimization</h3>
+                            <a class="repo-link"
+                                href="https://github.com/Fezzaioussama/Neural-network-optimization-for-edge-device"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>AutoML design of CNN architectures for memory-constrained edge devices, using reinforcement
+                            learning for neural-architecture topology search.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">AutoML</span>
+                            <span class="tech-tag">Edge AI</span>
+                            <span class="tech-tag">Reinforcement Learning</span>
+                        </div>
                     </div>
+                </div>
+
+                <h3 class="subsection-title">More on GitHub</h3>
+                <div class="projects-grid">
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Prompt Engineering Web API</h3>
+                            <a class="repo-link"
+                                href="https://github.com/Fezzaioussama/Deploy-Api-in-web-for-prompt-engineering"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Web API that serves prompt-engineering workflows and LLM interactions over HTTP.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">LLM</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>BERT for NLP</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/BERT-" target="_blank"
+                                rel="noopener" aria-label="View on GitHub"><svg width="20" height="20" viewBox="0 0 16 16"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Experiments with the BERT transformer architecture for natural-language understanding tasks.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Transformers</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Pose Detection & Video Processing</h3>
+                            <a class="repo-link"
+                                href="https://github.com/Fezzaioussama/Pose-Detection-and-Processing-video"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Human pose detection and keypoint extraction applied to video streams.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>MLOps Pipeline</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/Project-Mlops" target="_blank"
+                                rel="noopener" aria-label="View on GitHub"><svg width="20" height="20" viewBox="0 0 16 16"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>End-to-end MLOps project covering model training, packaging and deployment workflows.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">MLOps</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Knowledge Distillation — Handwriting</h3>
+                            <a class="repo-link"
+                                href="https://github.com/Fezzaioussama/Knowledge-distillation-and-DNN-for-handwriting-classification"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Knowledge distillation with deep neural networks for handwriting classification, compressing
+                            models while retaining accuracy.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Distillation</span>
+                            <span class="tech-tag">PyTorch</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Sales Insights Analytics</h3>
+                            <a class="repo-link"
+                                href="https://github.com/Fezzaioussama/Project-data-analytics-sales-insights"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Transformed raw sales data into interactive dashboards and actionable business insights.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Reinforcement Learning</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/Reinforcement-Learning"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Reinforcement-learning algorithms and experiments on classic control environments.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">RL</span>
+                            <span class="tech-tag">Gym</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Variational Autoencoder (VAE)</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/-Variational-Autoencoder-VAE-"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Implementation of a Variational Autoencoder for generative modelling and latent-space learning.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Generative</span>
+                            <span class="tech-tag">VAE</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Autoencoder</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/Auto-encoder-" target="_blank"
+                                rel="noopener" aria-label="View on GitHub"><svg width="20" height="20" viewBox="0 0 16 16"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Autoencoder for unsupervised representation learning and signal reconstruction.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Unsupervised</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>SVM from Scratch</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/SVM-from-scratch-using-Python"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Support Vector Machine implemented from scratch in Python to expose the underlying optimization.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">NumPy</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>PCA from Scratch</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/PCA-from-scratch-using-Python"
+                                target="_blank" rel="noopener" aria-label="View on GitHub"><svg width="20" height="20"
+                                    viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>PCA and the kernel-PCA trick implemented from scratch for linear and non-linear dimensionality
+                            reduction.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">NumPy</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Sequence Models</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/Sequence-Models" target="_blank"
+                                rel="noopener" aria-label="View on GitHub"><svg width="20" height="20" viewBox="0 0 16 16"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Time-series prediction with linear regression implemented in PyTorch using the d2l utilities.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Time Series</span>
+                        </div>
+                    </div>
+                    <div class="glass-card project-card">
+                        <div class="project-card-header">
+                            <h3>Custom DataLoader</h3>
+                            <a class="repo-link" href="https://github.com/Fezzaioussama/Custom-dataloder" target="_blank"
+                                rel="noopener" aria-label="View on GitHub"><svg width="20" height="20" viewBox="0 0 16 16"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                                </svg></a>
+                        </div>
+                        <p>Custom PyTorch DataLoader implementation for building efficient data pipelines.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view-all-wrap">
+                    <a href="https://github.com/Fezzaioussama?tab=repositories" target="_blank" rel="noopener"
+                        class="btn btn-secondary">View all repositories on GitHub →</a>
                 </div>
             </div>
         </section>
@@ -515,8 +827,12 @@
                             <li><strong>Python</strong> - HackerRank</li>
                             <li><strong>Machine Learning</strong> - Coursera</li>
                             <li><strong>Power BI</strong> - OpenClassrooms</li>
-                            <li><strong>Data Analysis</strong> - Accenture</li>
+                            <li><strong>Data Analysis & Visualization</strong> - Accenture</li>
                         </ul>
+                        <div class="cert-link-wrap">
+                            <a href="https://drive.google.com/drive/folders/1KBGDsPCnDRc5lwqlviUlTqlbhjNgLUwv?usp=drive_link"
+                                target="_blank" rel="noopener" class="btn btn-secondary">View Certificates</a>
+                        </div>
                     </div>
                     <div>
                         <h2>Publications</h2>
@@ -555,7 +871,8 @@
                         </div>
                         <div class="contact-item">
                             <span>📱</span>
-                            <span>07 45 40 00 96</span>
+                            <a href="tel:+33745400096"
+                                style="color: var(--text-secondary); text-decoration: none;">+33 7 45 40 00 96</a>
                         </div>
                         <div class="contact-item">
                             <span>📍</span>
